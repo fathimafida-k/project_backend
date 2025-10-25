@@ -57,7 +57,7 @@ exports.editProjectController=async(req,res)=>{
      const{projectName,projectManager,github,teamMembers,startDate,endDate,status,budget} = req.body
 
     try{
-    const updatedProject = await projectDetail.findByIdAndDelete({_id:id},{projectName,projectManager,github,teamMembers,startDate,endDate,status,budget},{new:true})
+    const updatedProject = await projectDetail.findByIdAndUpdate({_id:id},{projectName,projectManager,github,teamMembers,startDate,endDate,status,budget},{new:true})
     
         res.status(200).json(updatedProject)
     
